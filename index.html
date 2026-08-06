@@ -19,6 +19,8 @@
       <a href="#sonic">Sonic</a>
       <a href="#assets">Assets</a>
       <a href="#pipeline">Pipeline</a>
+      <a href="#hosting">Hosting</a>
+      <a href="#reflection">Reflection</a>
       <a href="#timeline">Timeline</a>
     </div>
   </div>
@@ -26,7 +28,7 @@
 
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">SIT253/SIT757 — Digital Portfolio — Progressive Folio 1</div>
+    <div class="eyebrow">SIT253/SIT757 — Digital Portfolio — Progressive Folio 1<br>Barbara Rein Calma — S224712709</div>
     <h1 class="title">Recovery</h1>
     <p class="lede">A VR space for rebuilding strength after injury — progressive rep and rest pacing for the exercises that happen alone, between clinical appointments.</p>
 
@@ -61,6 +63,20 @@
     <div class="block" style="margin-top:16px;">
       <strong>Ethical considerations</strong>
       Recovery is a supplementary motivational and pacing tool, not a medical device. It does not diagnose, prescribe, or correct exercise form — all guidance is limited to rep counting and rest-interval pacing, and users are directed to follow their physiotherapist's actual prescribed program.
+    </div>
+    <div class="block" style="margin-top:16px;">
+      <strong>Literature review</strong>
+      Virtual reality is an increasingly researched tool in physical rehabilitation, not just a novelty add-on. A 2024 review in <em>Current Medicine Research and Practice</em> found VR-based rehabilitation is already used across balance training, muscle strengthening, and gait recovery, with gamification elements — progress tracking, rewards, structured repetition — shown to improve exercise adherence specifically because they make otherwise repetitive routines more engaging.<br><br>
+      This adherence problem is well documented outside VR too: a Cochrane review cited in a 2025 knee osteoarthritis physiotherapy study found people are more likely to sustain an exercise program when it feels meaningful and enjoyable rather than purely clinical. Separately, physiotherapist-focused research into VR-supported shoulder rehabilitation found VR can enhance motivation specifically in programs requiring high repetition counts — directly relevant to Recovery's core mechanic of paced, repeated resistance and balance exercises.<br><br>
+      Taken together, this supports Recovery's core design bet: that a calm, structured, non-clinical VR space — rather than a gamified or overly playful one — can still meaningfully support adherence for solo rehab work, provided the pacing is handled well. This also informs the technical planning: target platform benchmarks are pulled directly from Meta's own Quest performance guidance (see references, and Asset List) to keep the experience light enough that performance itself doesn't become a barrier to engagement.
+      <br><br>
+      <strong style="display:block; margin-top:4px;">References</strong>
+      <ul style="margin:8px 0 0; padding-left:18px; font-size:0.88rem;">
+        <li>Use of virtual reality in physical rehabilitation: A review. <em>Current Medicine Research and Practice</em> (2024). <a href="https://journals.lww.com/cmre/fulltext/2024/14030/use_of_virtual_reality_in_physical_rehabilitation_.6.aspx" target="_blank" rel="noopener">journals.lww.com</a></li>
+        <li>Evaluating home-based personalised VR physiotherapy for knee osteoarthritis: protocol for a randomised feasibility study. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12548606/" target="_blank" rel="noopener">ncbi.nlm.nih.gov</a></li>
+        <li>Physiotherapist beliefs and perspectives on VR-supported rehabilitation for musculoskeletal shoulder pain: a focus group study protocol. <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8808320/" target="_blank" rel="noopener">ncbi.nlm.nih.gov</a></li>
+        <li>Testing and performance analysis. Meta Horizon OS Developers. <a href="https://developers.meta.com/horizon/documentation/unity/unity-perf/" target="_blank" rel="noopener">developers.meta.com</a></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -131,7 +147,7 @@
     </table>
     <div class="block" style="margin-top:16px;">
       <strong>Basis</strong>
-      Polycount and texture targets are benchmarked against Meta's own guidance of roughly 750k–1M total scene triangles on Quest 2/3, scaled per object by how close and interactive it is — hand-held rehab props sit toward the upper end of that per-object range since they're always in view and picked up directly. Audio specs (sample rate, format) will be set once the two remaining sound assets are recorded.
+      Polycount and texture targets are benchmarked against <a href="https://developers.meta.com/horizon/documentation/unity/unity-perf/" target="_blank" rel="noopener">Meta's own Quest performance guidance</a> (roughly 750k–1M total scene triangles on Quest 2/3), scaled per object by how close and interactive it is — hand-held rehab props sit toward the upper end of that per-object range since they're always in view and picked up directly. Audio specs (sample rate, format) will be set once the two remaining sound assets are recorded.
     </div>
   </div>
 </section>
@@ -159,25 +175,54 @@
   </div>
 </section>
 
+<section id="hosting">
+  <div class="wrap">
+    <div class="section-head"><span class="tag">Deployment</span><h2>Hosting Platform</h2></div>
+    <div class="block">
+      <strong>Decision</strong>
+      Hosted on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>, serving the site directly from a public repository. Chosen for full control over the custom design system (typography, layout, the departure-board-style header) that a drag-and-drop builder like Wix or Notion can't reproduce, and because it updates in seconds — push a new file, the live site reflects it, no rebuild step.
+    </div>
+    <div class="block" style="margin-top:16px;">
+      <strong>Live link</strong>
+      <a href="https://leth33.github.io/recovery-vr-portfolio/" target="_blank" rel="noopener">leth33.github.io/recovery-vr-portfolio</a>
+    </div>
+  </div>
+</section>
+
+<section id="reflection">
+  <div class="wrap">
+    <div class="section-head"><span class="tag">Self-evaluation</span><h2>Reflection</h2></div>
+    <div class="block">
+      Choosing Recovery as my theme came down to genuine interest rather than a calculated decision — once I moved away from the more personal travel-related idea I'd initially considered, Recovery was simply the concept that pulled my attention and felt like something I actually wanted to build, not just complete.
+      <br><br>
+      The planning stage was harder than I expected in a different way — not the creative decisions, but understanding exactly what Folio 1 required versus what belonged in later stages. I found myself going back to the assessment brief repeatedly, re-reading the requirements table more than once before the scope actually clicked. It was a good reminder that with a multi-stage assessment like this, checking the source document carefully matters as much as the actual creative work.
+      <br><br>
+      Getting the site live on GitHub Pages hit an unexpected snag: the deployment sat "in progress" far longer than usual, and it was genuinely frustrating watching it stall with nothing obviously wrong. I checked the Actions tab and workflow logs to troubleshoot, though nothing new turned up there — GitHub itself was simply slower than usual that time. Having used GitHub since high school, I knew roughly where to look, which made the wait less stressful even without a clear fix, and it deployed successfully shortly after.
+      <br><br>
+      Heading into Folio 2, Fusion 360 is the part I'm genuinely looking forward to — I already have experience with it, so building the resistance band anchor and balance board feels achievable. Texturing is the bigger unknown for me; it's a step I haven't done much of before, so it's both exciting and a little intimidating going in.
+    </div>
+  </div>
+</section>
+
 <section id="timeline">
   <div class="wrap">
     <div class="section-head"><span class="tag">Schedule</span><h2>Production Timeline</h2></div>
     <div class="timeline">
       <div class="stop"><div class="when">Fri 7 Aug</div>Folio 1 due — theme, planning, asset list locked (1-week extension confirmed)</div>
-      <div class="stop"><div class="when">Week of 10 Aug</div>First hard-surface models (resistance band anchor, balance board)</div>
-      <div class="stop"><div class="when">Week of 17 Aug</div>Folio 2 — min. two 3D assets, one fully textured</div>
-      <div class="stop"><div class="when">Late Aug – Sep</div>Remaining models, audio production, site build-out</div>
-      <div class="stop"><div class="when">Final week</div>Final Folio — 4+ models, 10+ audio assets, reflection</div>
+      <div class="stop"><div class="when">Aug (post-Folio 1)</div>First hard-surface models (resistance band anchor, balance board)</div>
+      <div class="stop"><div class="when">Fri 28 Aug</div>Folio 2 due — min. two 3D assets, one fully textured</div>
+      <div class="stop"><div class="when">Sep</div>Remaining models, audio production, site build-out</div>
+      <div class="stop"><div class="when">Thu 24 Sep</div>Final Folio due — 4+ models, 10+ audio assets, reflection</div>
     </div>
     <div class="block" style="margin-top:16px;">
       <strong>Basis</strong>
-      Folio 1 date reflects a confirmed one-week extension. Remaining milestones are working estimates, set against the unit's Folio 2 and Final Folio deadlines.
+      Folio 1 date reflects a confirmed one-week extension. Folio 2 and Final Folio dates are the unit's official deadlines.
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">RECOVERY — SIT253/SIT757 Digital Portfolio — Progressive Folio 1</div>
+  <div class="wrap">RECOVERY — SIT253/SIT757 Digital Portfolio — Progressive Folio 1 — Barbara Rein Calma (S224712709)</div>
 </footer>
 
 </body>
